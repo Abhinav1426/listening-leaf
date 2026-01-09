@@ -17,11 +17,11 @@ export default function Header() {
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
-          <a href="#" className="flex items-center space-x-3">
-            <Logo className="h-12 w-auto" />
-            <div className="hidden sm:block">
-              <span className="text-xl font-bold text-primary-700">LISTENING LEAF</span>
-              <span className="block text-xs text-accent-600 font-medium">Listening Deeply. Leading Wisely.</span>
+          <a href="#" className="flex items-center space-x-2 sm:space-x-3">
+            <Logo className="h-8 sm:h-12 w-auto" />
+            <div>
+              <span className="text-base sm:text-xl font-bold text-primary-700">LISTENING LEAF</span>
+              <span className="hidden sm:block text-xs text-accent-600 font-medium">Listening Deeply. Leading Wisely.</span>
             </div>
           </a>
 
