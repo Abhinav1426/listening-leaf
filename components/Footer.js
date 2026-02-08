@@ -75,9 +75,9 @@ export default function Footer() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
                 <span className="text-sm text-gray-400">
-                  H.No 7-1-632/28,29,<br />
-                  Bapu Nagar, SR Nagar,<br />
-                  Hyderabad - 500038
+                  {/* H.No 7-1-632/28,29,<br />
+                      Bapu Nagar, SR Nagar,<br /> */}
+                      Hyderabad{/*  - 500038 */}
                 </span>
               </li>
               <li className="flex items-start space-x-3">

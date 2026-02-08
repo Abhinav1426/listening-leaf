@@ -34,9 +34,9 @@ export default function Contact() {
                   <div>
                     <h4 className="text-white font-semibold mb-1">Address</h4>
                     <p className="text-gray-300">
-                      H.No 7-1-632/28,29,<br />
-                      Bapu Nagar, SR Nagar,<br />
-                      Hyderabad - 500038
+                      {/* H.No 7-1-632/28,29,<br />
+                      Bapu Nagar, SR Nagar,<br /> */}
+                      Hyderabad{/*  - 500038 */}
                     </p>
                   </div>
                 </div>

@@ -118,7 +118,7 @@ Static files will be output to the `out/` directory.
 
 **Listening Leaf Private Limited**
 
-- **Address**: H.No 7-1-632/28,29, Bapu Nagar, SR Nagar, Hyderabad - 500038
+- **Address**: Hyderabad
 - **Phone**: +91 91332 13033 / +91 73861 11332
 - **Email**: listeningleafpl@gmail.com
 - **Website**: [www.listeningleaf.com](https://www.listeningleaf.com)
