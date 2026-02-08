@@ -37,7 +37,8 @@ export default function Hero() {
 
             <div>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4">
-                LISTENING LEAF
+                <span className="text-white">LISTENING </span>
+                <span className="text-accent-400">LEAF</span>
               </h1>
               <p className="text-2xl md:text-3xl font-medium">
                 <span className="text-gray-200">Listening Deeply.</span>

@@ -19,9 +19,13 @@ export default function Header() {
           {/* Logo */}
           <a href="#" className="flex items-center space-x-2 sm:space-x-3">
             <Logo className="h-8 sm:h-12 w-auto" />
-            <div>
-              <span className="text-base sm:text-xl font-bold text-primary-700">LISTENING LEAF</span>
-              <span className="hidden sm:block text-xs text-accent-600 font-medium">Listening Deeply. Leading Wisely.</span>
+            <div className="flex flex-col">
+              <span className="text-base sm:text-xl font-bold">
+                <span className="text-primary-700">LISTENING </span>
+                <span className="text-accent-600">LEAF</span>
+              </span>
+              <span className="hidden sm:block text-xs text-primary-700 font-medium">Listening Deeply. Leading Wisely.</span>
+              {/* <span className="hidden sm:block text-[10px] text-primary-600 tracking-wide mt-0.5">Listening Deeply. Leading Wisely.</span> */}
             </div>
           </a>
 

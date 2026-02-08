@@ -16,7 +16,10 @@ export default function Contact() {
           <div className="space-y-8">
             {/* Card */}
             <div className="bg-white/10 backdrop-blur-lg rounded-3xl p-8 border border-white/20">
-              <h3 className="text-2xl font-bold text-white mb-2">LISTENING LEAF</h3>
+              <h3 className="text-2xl font-bold mb-2">
+                <span className="text-white">LISTENING </span>
+                <span className="text-accent-400">LEAF</span>
+              </h3>
               <p className="text-accent-400 font-medium mb-2">Private Limited</p>
               <p className="text-gray-300 mb-8">
                 Business Consultancy and Financial Services
