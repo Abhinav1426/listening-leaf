@@ -120,8 +120,7 @@ export default function About() {
                 {/* Vision Quote */}
                 <div className="mt-6 p-4 bg-accent-50 rounded-xl border-l-4 border-accent-500">
                   <p className="text-sm text-gray-700 italic">
-                    "Our vision is to help organizations navigate complexity with confidence
-                    and grow with purpose."
+                    "Strong businesses are built not just on numbers, but on understanding. At Listening Leaf, we listen first, then help founders build with clarity, discipline, and purpose."
                   </p>
                   <p className="text-xs text-accent-600 font-medium mt-2">- Yerasi Chaitanya Reddy</p>
                 </div>
