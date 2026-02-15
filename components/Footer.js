@@ -2,20 +2,22 @@ import Logo from './Logo'
 
 export default function Footer() {
   const services = [
-    'Accounting & Finance',
-    'Compliance Services',
-    'GST Compliances',
-    'Tax Filing',
-    'Payroll Processing',
-    'Business Analytics',
+    { label: 'Accounting & Finance', href: '/#services' },
+    { label: 'Compliance Services', href: '/#services' },
+    { label: 'GST Compliances', href: '/#services' },
+    { label: 'Tax Filing', href: '/#services' },
+    { label: 'Payroll Processing', href: '/#services' },
+    { label: 'Business Analytics', href: '/#services' },
+    { label: 'Startup Support', href: '/Startup' },
   ]
 
   const quickLinks = [
-    { label: 'Services', href: '#services' },
-    { label: 'How We Work', href: '#how-we-work' },
-    { label: 'About Us', href: '#about' },
-    { label: 'Benefits', href: '#benefits' },
-    { label: 'Contact', href: '#contact' },
+    { label: 'Services', href: '/#services' },
+    { label: 'Startup Support', href: '/Startup' },
+    { label: 'How We Work', href: '/#how-we-work' },
+    { label: 'About Us', href: '/#about' },
+    { label: 'Benefits', href: '/#benefits' },
+    { label: 'Contact', href: '/#contact' },
   ]
 
   return (
@@ -46,8 +48,8 @@ export default function Footer() {
             <ul className="space-y-3">
               {services.map((service, index) => (
                 <li key={index}>
-                  <a href="#services" className="text-gray-400 hover:text-accent-400 transition-colors duration-200 text-sm">
-                    {service}
+                  <a href={service.href} className="text-gray-400 hover:text-accent-400 transition-colors duration-200 text-sm">
+                    {service.label}
                   </a>
                 </li>
               ))}

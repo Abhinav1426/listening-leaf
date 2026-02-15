@@ -1,15 +1,17 @@
 import { useState } from 'react'
+import Link from 'next/link'
 import Logo from './Logo'
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   const navLinks = [
-    { href: '#services', label: 'Services' },
-    { href: '#how-we-work', label: 'How We Work' },
-    { href: '#about', label: 'About' },
-    { href: '#benefits', label: 'Benefits' },
-    { href: '#contact', label: 'Contact' },
+    { href: '/#services', label: 'Services' },
+    { href: '/Startup', label: 'Startup' },
+    { href: '/#how-we-work', label: 'How We Work' },
+    { href: '/#about', label: 'About' },
+    { href: '/#benefits', label: 'Benefits' },
+    { href: '/#contact', label: 'Contact' },
   ]
 
   return (
@@ -17,7 +19,7 @@ export default function Header() {
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
-          <a href="#" className="flex items-center space-x-2 sm:space-x-3">
+          <Link href="/" className="flex items-center space-x-2 sm:space-x-3">
             <Logo className="h-8 sm:h-12 w-auto" />
             <div className="flex flex-col">
               <span className="text-base sm:text-xl font-bold">
@@ -27,7 +29,7 @@ export default function Header() {
               <span className="hidden sm:block text-xs text-primary-700 font-medium">Listening Deeply. Leading Wisely.</span>
               {/* <span className="hidden sm:block text-[10px] text-primary-600 tracking-wide mt-0.5">Listening Deeply. Leading Wisely.</span> */}
             </div>
-          </a>
+          </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
@@ -40,7 +42,7 @@ export default function Header() {
                 {link.label}
               </a>
             ))}
-            <a href="#contact" className="btn-primary text-sm py-2 px-6">
+            <a href="/#contact" className="btn-primary text-sm py-2 px-6">
               Get Started
             </a>
           </div>
@@ -79,7 +81,7 @@ export default function Header() {
               </a>
             ))}
             <a
-              href="#contact"
+              href="/#contact"
               className="block mt-4 btn-primary text-center text-sm py-2"
               onClick={() => setIsMenuOpen(false)}
             >
