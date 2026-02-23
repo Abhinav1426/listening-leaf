@@ -1,4 +1,39 @@
+import { useState } from 'react'
+
 export default function Contact() {
+  const [status, setStatus] = useState('idle') // idle | sending | success | error
+  const [errorMsg, setErrorMsg] = useState('')
+
+  async function handleSubmit(e) {
+    e.preventDefault()
+    setStatus('sending')
+    setErrorMsg('')
+
+    const formData = new FormData(e.target)
+    formData.append('access_key', '770cdd4b-c891-47ed-b704-2b07538cadf9')
+
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: formData,
+      })
+
+      const data = await response.json()
+
+      if (response.ok) {
+        setStatus('success')
+        e.target.reset()
+        setTimeout(() => setStatus('idle'), 5000)
+      } else {
+        setErrorMsg(data.message || 'Something went wrong.')
+        setStatus('error')
+      }
+    } catch (error) {
+      setErrorMsg('Something went wrong. Please try again.')
+      setStatus('error')
+    }
+  }
+
   return (
     <section id="contact" className="py-20 gradient-bg">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -132,7 +167,29 @@ export default function Contact() {
             <div>
               <h3 className="text-2xl font-bold text-primary-700 mb-6">Send us a message</h3>
 
-              <form className="space-y-5">
+              {/* Success Message */}
+              {status === 'success' && (
+                <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-xl flex items-center space-x-3">
+                  <svg className="w-6 h-6 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  <p className="text-green-700 font-medium">Your message has been sent successfully!</p>
+                </div>
+              )}
+
+              {/* Error Message */}
+              {status === 'error' && (
+                <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-xl flex items-center space-x-3">
+                  <svg className="w-6 h-6 text-red-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  <p className="text-red-700 font-medium">{errorMsg}</p>
+                </div>
+              )}
+
+              <form onSubmit={handleSubmit} className="space-y-5">
+                <input type="hidden" name="subject" value="New Contact Form Submission - Listening Leaf" />
+
                 <div className="grid sm:grid-cols-2 gap-5">
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
@@ -142,6 +199,7 @@ export default function Contact() {
                       type="text"
                       id="name"
                       name="name"
+                      required
                       className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary-500 focus:ring-2 focus:ring-primary-200 transition-all duration-200 outline-none"
                       placeholder="John Doe"
                     />
@@ -154,6 +212,7 @@ export default function Contact() {
                       type="tel"
                       id="phone"
                       name="phone"
+                      required
                       className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary-500 focus:ring-2 focus:ring-primary-200 transition-all duration-200 outline-none"
                       placeholder="+91 98765 43210"
                     />
@@ -168,6 +227,7 @@ export default function Contact() {
                     type="email"
                     id="email"
                     name="email"
+                    required
                     className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary-500 focus:ring-2 focus:ring-primary-200 transition-all duration-200 outline-none"
                     placeholder="john@example.com"
                   />
@@ -200,6 +260,7 @@ export default function Contact() {
                     id="message"
                     name="message"
                     rows={3}
+                    required
                     className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary-500 focus:ring-2 focus:ring-primary-200 transition-all duration-200 outline-none resize-none"
                     placeholder="Tell us about your requirements..."
                   ></textarea>
@@ -207,9 +268,10 @@ export default function Contact() {
 
                 <button
                   type="submit"
-                  className="w-full btn-primary"
+                  disabled={status === 'sending'}
+                  className="w-full btn-primary disabled:opacity-60 disabled:cursor-not-allowed"
                 >
-                  Send Message
+                  {status === 'sending' ? 'Sending...' : 'Send Message'}
                 </button>
               </form>
             </div>
