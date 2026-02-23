@@ -93,7 +93,7 @@ export default function About() {
               {/* Team Members */}
               <div className="p-8 space-y-6">
                 <div className="flex items-center space-x-4">
-                  <div className="w-14 h-14 rounded-full bg-primary-700 flex items-center justify-center flex-shrink-0">
+                  <div className="w-14 h-14 rounded-full bg-primary-600 flex items-center justify-center flex-shrink-0">
                     <span className="text-white font-bold text-sm">CA</span>
                   </div>
                   <div>
