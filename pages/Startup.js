@@ -164,10 +164,15 @@ export default function Startup() {
   return (
     <>
       <Head>
-        <title>Startup Business Support - Listening Leaf</title>
+        <title>Startup Support Services in Hyderabad | Company Registration & Accounting Setup - Listening Leaf</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="description" content="Listening Leaf helps startups turn ideas into sustainable enterprises. From entity setup to growth advisory, we provide practical guidance, financial structure, and strategic direction." />
-        <meta name="keywords" content="startup support, business registration, company incorporation, startup compliance, financial planning, MSME, Hyderabad" />
+        <meta name="description" content="Startup support services in Hyderabad, Telangana. Company registration, GST registration, accounting setup, tax filing, compliance management & financial planning for startups. Call Listening Leaf at 91332 13033." />
+        <meta name="keywords" content="startup support Hyderabad, startup registration Hyderabad, company registration for startups Telangana, startup accounting Hyderabad, startup GST registration, startup tax filing, startup compliance Hyderabad, business registration Hyderabad, company incorporation Hyderabad, MSME registration Hyderabad, startup financial planning, bookkeeping for startups, startup payroll setup, founder agreements, business structure advisory Hyderabad, Listening Leaf startup" />
+        <link rel="canonical" href="https://listeningleaf.com/Startup" />
+        <meta property="og:title" content="Startup Support Services in Hyderabad | Listening Leaf" />
+        <meta property="og:description" content="Complete startup support - company registration, GST registration, accounting setup, tax filing & compliance in Hyderabad, Telangana." />
+        <meta property="og:url" content="https://listeningleaf.com/Startup" />
+        <meta property="og:type" content="website" />
       </Head>
       <main className="min-h-screen">
         <Header />
